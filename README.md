@@ -1,5 +1,5 @@
 Currently:
-Ability to change the background colour of the current chrome page.
+Ability to choose a colour using a colour picker or 4 different presents, thus far the choice does not hange anything on the webpage.
 
 
 Goal:
