@@ -1,80 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Select Color</title>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- https://www.hslpicker.com/#c0ff33 -->
-
 <body>
-    <div id="app">
-        <div id="root">
-            <div class="main">
-                <div>
-                    <div class="colour-swatch"></div>
-                    <div class="colour-code">
-                        <input type="text" name="hex" pattern="^#(\b(?:[0-9A-Fa-f]{3}|[0-9A-Fa-f]{4}
-                        |[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})\b)$" autocomplete="off" autocorrect="off" 
-                        autocapitalize="off" spellcheck="false" fdprocessedid="w90u7">
-                    </div>
+
+    <div class="pageWrap">
+        <div class="colorAlphaBox">
+
+            <div class="colorPicker">
+                <input type="color" value="#A98256" id="color">
+                <div id="colorString">#A98256</div>
+            </div>
+
+            <div class="alphaBox">
+
+                <div class="alphaSlider">
+                    <input type="range" id="alphaValue" min="0" max="1" step="0.01" value="0.1">
+                    <div id="alphaText">10%</div>
                 </div>
-                <div class="colour-picker">
-                    <div class="colour-slider">
-                        <div class="slider-track" style="position: relative;">
-                            <input type="range" data-model="hsv" name="hue" min="0" max="360" step="1" 
-                            value="196" style="background: var(--picker-hsv-hue-gradient);">
-                        </div>
-                        <input type="number" data-model="hsv" name="hueNum" min="0" max="360" step="1" 
-                        value="196" fdprocessedid="itan7u">
-                    </div>
 
-                    <div class="colour-slider">
-                        <div class="slider-track" style="position: relative;">
-                            <input type="range" data-model="hsv" name="hsvSaturation" min="0" max="100" 
-                            step="0.1" value="83.6" style="background: var(--picker-hsv-saturation-gradient);">
-                        </div>
-                        <input type="number" data-model="hsv" name="hsvSaturationNum" min="0" max="100" 
-                        step="0.1" value="83.6" fdprocessedid="6ko9c">
-                    </div>
+                <div class="alphaTitle" id="opacity">Opacity</div>
 
-                    <div class="colour-slider">
-                        <div class="slider-track" style="position: relative;">
-                            <input type="range" data-model="hsv" name="value" min="0" max="100" step="0.1" 
-                            value="72.1" style="background: var(--picker-hsv-value-gradient);">
-                        </div>
-                        <input type="number" data-model="hsv" name="valueNum" min="0" max="100" step="0.1" value="72.1" fdprocessedid="x527l">
-                    </div>
-
-                    <div class="colour-slider">
-                        <div class="slider-track" style="position: relative;">
-                            <input type="range" data-model="hsv" name="alpha" min="0" max="1" step="0.01" 
-                            value="1" style="background: linear-gradient(to right, hsl(var(--picker-hue) calc(var(--picker-saturation) * 1%) 
-                            calc(var(--picker-luminosity) * 1%) / 0), hsl(var(--picker-hue) calc(var(--picker-saturation) * 1%) calc(var(--picker-luminosity) * 1%) / 1));">
-                        </div>
-                        <input type="number" data-model="hsv" name="alphaNum" min="0" max="1" step="0.01" value="1" fdprocessedid="6njsj5">
-                    </div>
+                <div class="flexOptions">
+                    <input type="button" value="Warm" id="warmButton" class="presetButton">
+                    <input type="button" value="Cool" id="coolButton" class="presetButton">
+                    <input type="button" value="Read" id="readButton" class="presetButton">
+                    <input type="button" value="Mint" id="mintButton" class="presetButton">
                 </div>
+
+            </div>
+
+            <div class="on-off">
+                <label class="switch">
+                    <input type="checkbox" id="on-off-toggle">
+                    <span class="slider round" id="on-off-slider">
+                        <span class="slider-text slider-text-on">On</span>
+                        <span class="slider-text slider-text-off">Off</span>
+                    </span>
+                </label>
+
             </div>
         </div>
     </div>
 
-
-
-  <div id="button-container">
-    <button id="color0"></button>
-    <button id="color1"></button>
-    <button id="color2"></button>
-    <button id="color3"></button>
-  </div>
-  <div id="color-picker-container">
-    <label for="colorPicker">custom color:</label>
-    <input type="color" id="colorPicker" value="#f5cccc" />
-  </div>
-  <script src="popup.js"></script>
+    <script src="popup.js"></script>
 </body>
 
 </html>
